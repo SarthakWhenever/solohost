@@ -41,7 +41,7 @@ async function cacheIt(request, response) {
             log(written[1]);
             log(writtenJSON[1]);
         }else {
-    dataRes = `<h3>Successfully cached the link. Your cacheLink is at this link <a href="/caches/${hashName}/">/caches/${hashName}/</a><h3>`;
+    dataRes = `<h1>Successfully cached the link. Your cacheLink is at this link <a href="/caches/${hashName}/">/caches/${hashName}/</a><h1>`;
         }
         response.writeHead(resStatCode, {
             "Content-type": "text/html; charset=utf-8"
