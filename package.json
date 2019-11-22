@@ -1,0 +1,12 @@
+{
+  "name": "solohost",
+  "version": "2.0.1",
+  "description": "Improved version of sololearn code host",
+  "main": "server.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "node server.js"
+  },
+  "author": "Sarthak Pokharel / FrozenCoder57",
+  "license": "ISC"
+}

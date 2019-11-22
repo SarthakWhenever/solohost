@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--CREATED BY MONISHA👸-->
+       <!--DATE:19TH NOVEMBER 2019-->
+<!--THANKS TO ALEX TUSINEAN FOR HELPING ME OPTIMIZE THE LOADER FOR ALL DEVICE🌻-->
+        <title>MARATHON LOADER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style id="style-from-editor">body {
+margin:0;
+padding:0;
+background:#1C2833 ;
+width:100vw;
+height:100vh;
+overflow:none;
+}
+.percent-count{
+     width:80vw; 
+    height:5vh; 
+    left:50%; 
+    top:25%; 
+    transform:translate(-50%); 
+    right:0%;
+    font-size:8vh; 
+    display:flex; 
+    align-items:center;
+    position:relative;
+    justify-content:center;
+    color:#F4D03F;
+
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+
+}
+.progress-bar{
+  width:90vw; 
+     height:5vh; 
+     background-color:#808B96;
+     overflow:none;
+     border-radius:3px;
+     margin:30px auto;
+     position:absolute;
+     left:5vw; 
+     top:50%; 
+     transform:translate(0,-50%); 
+}
+.progress{
+ position:absolute ; 
+    width:100%; 
+    height:100%; 
+    overflow:none;
+    border-radius:3px;
+    background:#F4D03F;
+    box-shadow: 2px 2px 7px 1px #FFE666;
+}
+#img1{
+     width:12vmin; 
+    height:17vmin; 
+    position:absolute; 
+    bottom:100%;
+    
+}
+.foot{
+    margin:0;
+    padding:0;
+    position:fixed;
+    color:white;
+    bottom:0;
+    top:40vh; 
+    font-size:3vh; 
+}
+
+    
+    
+</style>
+<script id="script-from-editor"> 
+function progress1(){
+   
+        var elem = document.getElementById("percent");  
+ var pro = document.getElementById("progress");  
+ var im=document.getElementById("img1")
+
+
+ var width=1;
+  var id = setInterval(loader, 200);
+  function loader() {
+    if (width >= 100) {
+      clearInterval(id);
+     elem.style.color=" #3AE83A";
+      pro.style.cssText="background-color:#009919;box-shadow: 2px 2px 7px 1px #3AE83A;";
+   im.style.display = "none";
+  
+    } else {
+        
+      width++; 
+      
+ im.style.left= width-3+ "%"; 
+pro.style.width=width+3+'%';
+     elem.innerHTML = width*1+ '%';
+
+
+    }
+  }
+
+}
+ </script></head>
+    <body>
+        <body onload="progress1();">
+        <div id="percent" class="percent-count">100%</div>
+<div class="progress-bar">
+    <div class="progress" id="progress"></div>
+    <img src="https://media.giphy.com/media/LwHgyDPY00ItITwO15/giphy.gif" id="img1">
+<footer class="foot">&copy Monisha</footer>
+</div>    
+    </body>
+</html>

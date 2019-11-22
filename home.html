@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SoloHost</title>
+</head>
+<body>
+    <h1 class="heading">A hosting service to all sololearn code</h1>
+    <br/>
+    To get your code in browser, enter the code in following format. 
+    <br/>
+    <code>https://solohost.herokuapp.com/https://code.sololearn.com/codePubicId/#langOptional</code>
+    <br/>
+    <br/>
+    FOr example, code URL is <br/>
+    <a href="https://code.sololearn.com/Wn44qf90wZuN/#">https://code.sololearn.com/Wn44qf90wZuN/#</a>
+    <br/>
+     <script>
+         var port = location.port;
+         if(!port) {
+             port = ""
+         }else {
+             port = ":" + port;
+         }
+         var domain = location.hostname+port;
+         var protocol = location.protocol;
+         document.write('then the solohost link is <a href="'+protocol+'//'+domain+'/https://code.sololearn.com/Wn44qf90wZuN/">'+protocol+'//'+domain+'/https://code.sololearn.com/Wn44qf90wZuN/</a>')
+     </script>
+</body>
+</html>

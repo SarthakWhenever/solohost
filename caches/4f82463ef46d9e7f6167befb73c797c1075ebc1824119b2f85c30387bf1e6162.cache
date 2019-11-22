@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basic Password Generator</title>
+    <link href="https://fonts.googleapis.com/css?family=Public+Sans&display=swap" rel="stylesheet">
+    <style>
+
+        body{
+
+            font-family: 'Public Sans', sans-serif;
+
+        }
+
+        #inputSection{
+
+            width: 100%;
+            text-align: center;
+
+        }
+
+        #buttonSection{
+
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+
+        }
+
+        #myInput{
+
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: grey;
+
+        }
+
+        #generateButton{
+
+            padding: 5px;
+            color: white;
+            background-color: darkgreen;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+    </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style id="style-from-editor">body {
+	
+}</style>
+<script id="script-from-editor"> </script></head>
+<body>
+    <section id="mySection">
+        <div id="inputSection">
+            <input id="myInput" type="text" value="Press Generate below" readonly/>
+        </div>
+        <div id="buttonSection">
+            <button id="generateButton">Generate</button>
+        </div>
+    </section>
+    <script>
+
+        document.getElementById("generateButton").addEventListener("click",clickEvent,false);
+
+        function clickEvent(event){
+
+            document.getElementById("generateButton").removeEventListener("click",clickEvent,false);
+            generate();
+
+            setTimeout(function(){
+
+                document.getElementById("generateButton").addEventListener("click",clickEvent,false);
+
+            },5100);
+
+        }
+
+        function generate(){
+
+            var myInput = document.getElementById("myInput");
+            var iterations = 0;
+            var anInterval;
+
+            clearInterval(anInterval);
+
+            anInterval = setInterval(function(){
+
+                var newPass = "";
+                var maxChars = Math.floor(Math.random()*8)+8;
+                var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+                var symbols = ["@","#","$","%","[","]","{","}","(",")",",",".","<",">","~"];
+                var numbers = ["0","1","2","3","4","5","6","7","8","9"];
+
+                var arr = [letters,letters,symbols,numbers];
+
+                var combinations = [];
+
+                for(let i=0; i<maxChars; i++){
+
+                    combinations.push(Math.floor(Math.random()*arr.length));
+
+                }
+
+                for(let i=0; i<arr.length; i++){
+
+                    if(combinations.indexOf(i) == -1){
+
+                        combinations.push(i);
+                        maxChars++;
+
+                    }
+
+                }
+
+                for(let i=0; i<maxChars; i++){
+
+                    if(combinations[i] == 1){
+
+                        newPass += ""+arr[combinations[i]][Math.floor(Math.random()*(arr[combinations[i]].length))].toUpperCase();
+
+                    } else {
+
+                        newPass += ""+arr[combinations[i]][Math.floor(Math.random()*(arr[combinations[i]].length))];
+
+                    }
+
+                }
+
+                myInput.value = newPass;
+
+                if(iterations > 125){
+
+                    clearInterval(anInterval);
+
+                } else {
+
+                    iterations++;
+
+                }
+
+            },40);
+
+        }
+    
+        /*
+
+            145/365
+
+        */
+    
+    </script>
+    
+</body>
+</html>
