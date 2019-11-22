@@ -11,5 +11,11 @@
   "license": "ISC",
   "engines": {
     "node": "10.x"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "heroku": "^7.35.0",
+    "is-url": "^1.2.4",
+    "request": "^2.88.0"
   }
 }
