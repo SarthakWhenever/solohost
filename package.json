@@ -8,5 +8,8 @@
     "start": "node server.js"
   },
   "author": "Sarthak Pokharel / FrozenCoder57",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "10.x"
+  }
 }
